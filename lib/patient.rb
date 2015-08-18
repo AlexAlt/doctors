@@ -31,6 +31,7 @@ class Patient
     result = DB.exec("INSERT INTO patient (name, birthday, doctor_id) VALUES ('#{@name}','#{@birthday}', #{@doctor_id}) RETURNING id;")
     @id = result.first().fetch("id").to_i()
   end
+
   define_method(:==) do |another_patient|
     self.name.==(another_patient.name).&(self.doctor_id.==(another_patient.doctor_id)).&(self.birthday.==(another_patient.birthday)).&(self.id.==(another_patient.id))
   end
