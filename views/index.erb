@@ -1,0 +1,17 @@
+<h1>Doctors List</h1>
+
+<ul>
+  <% @doctors.each() do |doctor| %>
+    <li><a href="/doctors/<%= doctor.id() %>"><%= doctor.name() %></a>/<li>
+  <% end %>
+</ul>
+
+<form action="/doctors" method="post">
+  <label for="name">Name your list</label>
+  <input id="name" name="name" type="text">
+
+  <label for="specialty">Add Specialty</label>
+  <input id="specialty" name="specialty" type="text">
+
+  <button type="submit">Add it!!</button>
+</form>
