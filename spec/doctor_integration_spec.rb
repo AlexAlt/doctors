@@ -13,3 +13,9 @@ describe('adds a doctor to the home page', {:type => :feature}) do
     expect(page).to have_content('Success!')
   end
 end
+
+describe('seeing deetz for specific doctor') do
+  it('displays the patients of the specific doctor') do
+
+  end
+end

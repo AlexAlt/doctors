@@ -1,13 +1,15 @@
 <h1>Doctors List</h1>
 
-<ul>
+<dl class="dl-horizontal">
   <% @doctors.each() do |doctor| %>
-    <li><a href="/doctors/<%= doctor.id() %>"><%= doctor.name() %></a>/<li>
+    <dt><a href="/doctors/<%= doctor.id() %>"><%= doctor.name() %>:</a></dt>
+    <dd><small><%= doctor.specialty() %></small></dd>
+
   <% end %>
-</ul>
+</dl>
 
 <form action="/doctors" method="post">
-  <label for="name">Name your list</label>
+  <label for="name">Name Doctor</label>
   <input id="name" name="name" type="text">
 
   <label for="specialty">Add Specialty</label>
